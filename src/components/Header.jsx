@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { toggleCart } from '../cartSlice';
-import { AppBar, Toolbar, Typography, Box, Badge, IconButton, Container } from '@mui/material';
+import { 
+  AppBar, Toolbar, Typography, Box, Badge, IconButton, 
+  Container, Drawer, List, ListItem, ListItemText 
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
 
 // --- Styled Components ---
-
 const StyledAppBar = styled(AppBar)({
   backgroundColor: '#fff',
   color: '#333',
@@ -28,50 +31,71 @@ const StyledNavLink = styled(NavLink)({
   margin: '0 15px',
   transition: 'color 0.3s ease',
   '&:hover': { color: '#b08b73' },
-  '&.active': { 
-    color: '#b08b73', 
-    fontWeight: '600'
-  },
+  '&.active': { color: '#b08b73', fontWeight: '600' },
 });
 
 export default function Header() {
   const { items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
+
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
+  // פריטי התפריט
+  const menuItems = [
+    { text: 'דף הבית', path: '/' },
+    { text: 'וילונות', path: '/products' },
+    { text: 'אודות', path: '/about' },
+    { text: 'צור קשר', path: '/contact' },
+  ];
 
   return (
     <StyledAppBar>
       <Container maxWidth="xl">
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', height: '80px' }}>
           
-          {/* צד אחד - לוגו */}
+          {/* המבורגר - מופיע רק בטלפון (xs) בצד ימין */}
+          <IconButton
+            color="inherit"
+            onClick={toggleMobileMenu}
+            sx={{ display: { md: 'none' }, color: '#333', ml: 1 }}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          {/* לוגו - ממורכז בטלפון, בצד ימין במחשב */}
           <Box 
             onClick={() => navigate('/')} 
-            sx={{ cursor: 'pointer', flex: 1, display: 'flex', justifyContent: 'flex-start' }}
+            sx={{ 
+              cursor: 'pointer', 
+              display: 'flex', 
+              flexGrow: 1, 
+              justifyContent: { xs: 'center', md: 'flex-start' },
+              // תיקון איזון בטלפון בגלל שההמבורגר תופס מקום בצד אחד
+              mr: { xs: '40px', md: 0 } 
+            }}
           >
-            <Typography variant="h5" sx={{ fontWeight: '300', letterSpacing: '1px' }}>
+            <Typography variant="h5" sx={{ fontWeight: '300', letterSpacing: '1px', fontSize: { xs: '1.1rem', md: '1.5rem' } }}>
               Vilonot <Box component="span" sx={{ fontWeight: 'bold', color: '#b08b73' }}>Studio</Box>
             </Typography>
           </Box>
 
-          {/* מרכז - תפריט ניווט (הלשוניות) */}
+          {/* תפריט ניווט למחשב - נעלם בטלפון */}
           <Box component="nav" sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'center', flex: 2 }}>
-            <StyledNavLink to="/contact">צור קשר</StyledNavLink>
-            <StyledNavLink to="/about">אודות</StyledNavLink>
-            <StyledNavLink to="/products">וילונות</StyledNavLink>
-            <StyledNavLink to="/">דף הבית</StyledNavLink>
+            {/* הופך את הסדר שיוצג נכון מימין לשמאל במחשב */}
+            {menuItems.slice().reverse().map((item) => (
+              <StyledNavLink key={item.path} to={item.path}>{item.text}</StyledNavLink>
+            ))}
           </Box>
 
-          {/* צד שני - עגלת קניות */}
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+          {/* עגלת קניות - תמיד בצד שמאל */}
+          <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <IconButton 
               onClick={() => dispatch(toggleCart())}
-              sx={{ 
-                color: '#333',
-                '&:hover': { animation: 'cartBounce 0.4s forwards' } 
-              }}
+              sx={{ color: '#333' }}
             >
               <Badge 
                 badgeContent={totalItems} 
@@ -84,6 +108,30 @@ export default function Header() {
 
         </Toolbar>
       </Container>
+
+      {/* תפריט צד נפתח (Drawer) */}
+      <Drawer
+        anchor="right" // נפתח מצד ימין
+        open={mobileMenuOpen}
+        onClose={toggleMobileMenu}
+      >
+        <Box 
+          sx={{ width: 250, pt: 5 }} 
+          role="presentation" 
+          onClick={toggleMobileMenu}
+        >
+          <List>
+            {menuItems.map((item) => (
+              <ListItem button key={item.text} onClick={() => navigate(item.path)}>
+                <ListItemText 
+                  primary={item.text} 
+                  sx={{ textAlign: 'right', pr: 3 }} // טקסט מוצמד לימין
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
     </StyledAppBar>
   );
 }

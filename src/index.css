@@ -28,3 +28,42 @@ body, html, #root {
   box-shadow: 0 12px 30px rgba(0,0,0,0.2) !important;
   background-color: #fcfcfc !important;
 }
+/* --- תיקוני רספונסיביות לכל האתר --- */
+
+@media (max-width: 768px) {
+  /* מונע מהאתר "לברוח" הצידה ויוצר שוליים נעימים */
+  body {
+    overflow-x: hidden;
+    padding: 0 10px; 
+  }
+
+  /* גורם לכל התמונות להתכווץ ולא לחרוג מהמסך */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* מקטין את הכותרות הגדולות רק בטלפון */
+  h1 {
+    font-size: 1.8rem !important;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  /* אם יש אלמנטים שיושבים אחד ליד השני, זה ינסה להוריד אותם שורה */
+  .flex-container, .grid-container {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  /* תיקון לכפתור העגלה הצף - שלא יסתיר טקסט בטלפון */
+  .floating-cart-container {
+    bottom: 20px !important;
+    right: 20px !important;
+    scale: 0.8; /* מקטין אותו קצת בטלפון */
+  }
+}
