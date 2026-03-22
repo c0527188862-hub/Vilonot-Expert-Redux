@@ -1,0 +1,36 @@
+[
+  { "id": 1, "title": "וילון סלון פריז", "price": 1200, "category": "living-room", "img": "s1" },
+  { "id": 2, "title": "וילון סלון מילאנו", "price": 1350, "category": "living-room", "img": "s2" },
+  { "id": 3, "title": "וילון סלון ונציה", "price": 1100, "category": "living-room", "img": "s3" },
+  { "id": 4, "title": "וילון סלון רומא", "price": 1250, "category": "living-room", "img": "s4" },
+  { "id": 5, "title": "וילון סלון נאפולי", "price": 1150, "category": "living-room", "img": "s5" },
+  { "id": 6, "title": "וילון סלון פירנצה", "price": 1300, "category": "living-room", "img": "s6" },
+
+  { "id": 7, "title": "וילון אקוסטי Pro", "price": 950, "category": "acoustic", "img": "a1" },
+  { "id": 8, "title": "וילון אקוסטי Ultra", "price": 980, "category": "acoustic", "img": "a2" },
+
+  { "id": 9, "title": "וילון חשמלי חכם", "price": 2500, "category": "electric", "img": "c1" },
+  { "id": 10, "title": "מסילת וילון חשמלית", "price": 2100, "category": "electric", "img": "c2" },
+  { "id": 11, "title": "מנוע וילון שקט", "price": 2300, "category": "electric", "img": "c3" },
+
+  { "id": 12, "title": "וילון מעצבים Signature", "price": 1800, "category": "designer", "img": "g1" },
+  { "id": 13, "title": "וילון מעצבים יוקרתי", "price": 1750, "category": "designer", "img": "g2" },
+  { "id": 14, "title": "וילון מעצבים בוטיק", "price": 1900, "category": "designer", "img": "g3" },
+  { "id": 15, "title": "וילון מעצבים פרימיום", "price": 1850, "category": "designer", "img": "g4" },
+  { "id": 16, "title": "וילון מעצבים אקסקלוסיבי", "price": 2000, "category": "designer", "img": "g5" },
+  { "id": 17, "title": "וילון מעצבים מודרני", "price": 1700, "category": "designer", "img": "g6" },
+
+  { "id": 18, "title": "וילון הצללה גלילה", "price": 850, "category": "shading", "img": "m1" },
+  { "id": 19, "title": "וילון הצללה זברה", "price": 920, "category": "shading", "img": "m2" },
+  { "id": 20, "title": "וילון הצללה בד", "price": 880, "category": "shading", "img": "m3" },
+
+  { "id": 21, "title": "וילון האפלה מוחלטת", "price": 950, "category": "blackout", "img": "r1" },
+  { "id": 22, "title": "וילון Blackout מעוצב", "price": 980, "category": "blackout", "img": "r2" },
+
+  { "id": 23, "title": "וילון חלומות", "price": 750, "category": "bedroom", "img": "y1" },
+  { "id": 24, "title": "וילון עננים", "price": 760, "category": "bedroom", "img": "y2" },
+  { "id": 25, "title": "וילון כוכבים", "price": 740, "category": "bedroom", "img": "y3" },
+  { "id": 26, "title": "וילון נסיכות", "price": 780, "category": "bedroom", "img": "y4" },
+  { "id": 27, "title": "וילון קסם", "price": 770, "category": "bedroom", "img": "y5" },
+  { "id": 28, "title": "וילון פנטזיה", "price": 790, "category": "bedroom", "img": "y6" }
+]
