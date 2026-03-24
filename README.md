@@ -1,16 +1,21 @@
-# React + Vite
+#  Curtain Expert | Premium E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-end interior design and textile e-commerce application. Built with a focus on minimalist aesthetics, scalable state management, and a seamless user experience.
 
-Currently, two official plugins are available:
+##  Key Features
+* **Dynamic Product Catalog**: Smart 2-layer navigation from category selection to tailored product galleries.
+* **Global State Management**: Implemented via **Redux Toolkit** for real-time cart persistence and data flow.
+* **Premium UI/UX**: Developed with **Material UI (MUI)** and **Styled Components**, featuring custom animations and a responsive grid system.
+* **Interactive Shopping Flow**: Includes an animated floating cart and a sliding drawer for an effortless checkout experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Tech Stack
+* **Frontend**: React.js & Vite
+* **State**: Redux / Redux Toolkit
+* **Styling**: Material UI & CSS3 (Styled Components)
+* **Routing**: React Router DOM v6
+* **Data**: Asynchronous data fetching from a dynamic JSON structure
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/c0527188862-hub/Vilonot-Expert-Redux.git](https://github.com/c0527188862-hub/Vilonot-Expert-Redux.git)
