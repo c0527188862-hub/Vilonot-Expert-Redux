@@ -1,4 +1,10 @@
+# הגדרת כל קבצי ה-JS וה-JSX כקוד React
 *.js linguist-language=JSX
 *.jsx linguist-language=JSX
-vite.config.js linguist-vendored
-eslint.config.js linguist-vendored
+
+# החרגת תיקיות וקבצים שלא צריכים להיספר בסטטיסטיקה
+public/* linguist-vendored
+dist/* linguist-vendored
+node_modules/* linguist-vendored
+*.config.js linguist-vendored
+package-lock.json linguist-vendored
