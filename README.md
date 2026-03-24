@@ -19,3 +19,5 @@ A high-end interior design and textile e-commerce application. Built with a focu
 1. Clone the repository:
    ```bash
    git clone [https://github.com/c0527188862-hub/Vilonot-Expert-Redux.git](https://github.com/c0527188862-hub/Vilonot-Expert-Redux.git)
+   
+<img width="1857" height="906" alt="צילום מסך האתר" src="https://github.com/user-attachments/assets/3e6df8b6-1657-4ae8-a491-922f45e2cec3" />
